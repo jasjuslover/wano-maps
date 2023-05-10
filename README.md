@@ -22,10 +22,6 @@ or you can using yarn or pnpm too. To run this project, simply run this command 
   npm run start
 ```
 
-## Todo
-
-When deploy to Github Pages, it need to be tweaked in assets section. You can refer to [this commit](https://github.com/jasjuslover/wano-maps/commit/92414037963141b3c55ae77fd3edaaea9ee1046c) to see what need to be tweaked after the actions has completed.
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
