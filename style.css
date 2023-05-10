@@ -1,3 +1,8 @@
+/* Margin Removal */
+body {
+  margin: 0;
+}
+
 /* Map */
 #map {
   height: 100vh;
