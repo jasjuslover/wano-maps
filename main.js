@@ -11,6 +11,7 @@ import GeoJSON from "ol/format/GeoJSON";
 import Feature from "ol/Feature";
 import { Fill, Stroke, Style } from "ol/style";
 import { Overlay } from "ol";
+import "ol/ol.css";
 
 const source = new VectorSource({ wrapX: false });
 
