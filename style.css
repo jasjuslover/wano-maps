@@ -69,6 +69,18 @@ a.overlay {
   margin-right: auto;
 }
 
+.flex-wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 16px;
+}
+
+@media (max-width: 380px) {
+  .flex-wrapper {
+    flex-direction: column;
+  }
+}
+
 /* Modal Content Image */
 .modal-content img {
   width: 100%;

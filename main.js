@@ -29,6 +29,7 @@ const projection = new Projection({
   extent: extent,
 });
 let view = null;
+let selectedArea = "";
 
 function init() {
   const mapData = initMap();
@@ -161,42 +162,50 @@ function init() {
       //   Modal section
       const modal = document.getElementById("myModal");
       aTag.onclick = () => {
-        const coord = getCenter(source.getExtent());
         const area = JSON.parse(aTag.getAttribute("data-area"));
-        zoomInto(parseFloat(coord[0]), parseFloat(coord[1]));
-        mapData.getAllLayers().forEach((x, i) => {
-          if (i > 0) mapData.removeLayer(x);
-        });
 
-        const singleLayer = new VectorLayer({
-          source,
-          style: [
-            new Style({
-              fill: new Fill({
-                color: polygonData[x].fillSelected,
+        // show modal just when zoom level == 3 or active, and current selected area == clicked area
+        if (view.getZoom() === 3 && selectedArea === area.color) {
+          modal.style.display = "block";
+
+          const title = document.getElementById("title");
+          title.innerHTML = capitalizeEachWord(x);
+          const image = document.getElementById("image");
+          image.src = area.image;
+          const desc = document.getElementById("desc");
+          desc.innerHTML = area.description;
+          const close = modal.getElementsByClassName("close");
+          close[0].onclick = () => {
+            modal.style.display = "none";
+          };
+          window.onclick = (event) => {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          };
+        }
+
+        // just zoom when area is different with selected area
+        if (selectedArea !== area.color) {
+          selectedArea = area.color;
+          const coord = getCenter(source.getExtent());
+          zoomInto(parseFloat(coord[0]), parseFloat(coord[1]));
+          mapData.getAllLayers().forEach((x, i) => {
+            if (i > 0) mapData.removeLayer(x);
+          });
+
+          const singleLayer = new VectorLayer({
+            source,
+            style: [
+              new Style({
+                fill: new Fill({
+                  color: polygonData[x].fillSelected,
+                }),
               }),
-            }),
-          ],
-        });
-        mapData.addLayer(singleLayer);
-
-        // modal.style.display = "block";
-
-        // const title = document.getElementById("title");
-        // title.innerHTML = capitalizeEachWord(x);
-        // const image = document.getElementById("image");
-        // image.src = area.image;
-        // const desc = document.getElementById("desc");
-        // desc.innerHTML = area.description;
-        // const close = modal.getElementsByClassName("close");
-        // close[0].onclick = () => {
-        //   modal.style.display = "none";
-        // };
-        // window.onclick = (event) => {
-        //   if (event.target == modal) {
-        //     modal.style.display = "none";
-        //   }
-        // };
+            ],
+          });
+          mapData.addLayer(singleLayer);
+        }
       };
       map.addLayer(layer);
       map.addOverlay(
