@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [525.3759278897136, 489.87062566277837]
+      },
+      "properties": { "title": "HeatmapPts", "id": 111, "name": "sample 1" }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [611.5583244962884, 454.44008483563096]
+      },
+      "properties": { "title": "HeatmapPts", "id": 222, "name": "sample 1" }
+    }
+  ]
+}
