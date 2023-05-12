@@ -1,4 +1,4 @@
-# Wano Maps
+# Wano Maps [![Deploy](https://github.com/jasjuslover/wano-maps/actions/workflows/deploy.yml/badge.svg)](https://github.com/jasjuslover/wano-maps/actions/workflows/deploy.yml)
 
 Simple example how to use Static Image in [OpenLayers](https://openlayers.org/) v7.3.0. This project made from [Static Image example](https://openlayers.org/en/latest/examples/static-image.html) from OpenLayers official team.
 
