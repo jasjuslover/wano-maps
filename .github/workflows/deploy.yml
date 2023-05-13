@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master
+      
+defaults:
+  run:
+    working-directory: html
 
 jobs:
   build:
@@ -16,9 +20,6 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3
-
-      - name: Go to directory
-        run: cd html
         
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
