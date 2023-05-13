@@ -1,6 +1,7 @@
 /* Margin Removal */
 body {
   margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 /* Map */
@@ -17,8 +18,8 @@ a.overlay {
   color: #fff !important;
   padding: 0.2rem 0.5rem;
   border-radius: 2rem;
-  font-family: eb garamond, serif;
   font-size: 18px;
+  font-weight: 600;
   white-space: nowrap;
   text-decoration: none !important;
   border: 3px solid #fff;
