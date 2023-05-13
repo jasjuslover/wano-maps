@@ -66,7 +66,7 @@ function init() {
     let polygonData = {};
     try {
       const raw = await fetch(
-        "https://rawcdn.githack.com/jasjuslover/wano-maps/a4b3166e9238c11e0ba64a9e72f7b42153f549b5/areas.json"
+        "https://rawcdn.githack.com/jasjuslover/wano-maps/ae9038dcad85b66cf57cc3fe28bbf633d6895468/html/data/areas.json"
       );
       const res = await raw.json();
       polygonData = res?.data || {};
@@ -160,7 +160,7 @@ function init() {
   async function initHeatmap(map) {
     try {
       const raw = await fetch(
-        "https://rawcdn.githack.com/jasjuslover/wano-maps/a4b3166e9238c11e0ba64a9e72f7b42153f549b5/heatmap.json"
+        "https://rawcdn.githack.com/jasjuslover/wano-maps/ae9038dcad85b66cf57cc3fe28bbf633d6895468/html/data/heatmap.json"
       );
       const res = await raw.json();
 
@@ -202,7 +202,7 @@ function init() {
             source: new Static({
               attributions:
                 '© <a href="https://xkcd.com/license.html">xkcd</a>',
-              url: "https://rawcdn.githack.com/jasjuslover/wano-maps/a4b3166e9238c11e0ba64a9e72f7b42153f549b5/wano.png",
+              url: "https://rawcdn.githack.com/jasjuslover/wano-maps/ae9038dcad85b66cf57cc3fe28bbf633d6895468/html/assets/images/wano.png",
               projection: projection,
               imageExtent: extent,
             }),
